@@ -26,7 +26,7 @@ public class ProjectFactory {
                 String projectType = projectProperties[1];
                 num = Integer.parseInt(projectProperties[4]);
 
-                    cost = projectProperties[3];
+                cost = projectProperties[3];
                 duration = Integer.parseInt(projectProperties[5]);
 
 
