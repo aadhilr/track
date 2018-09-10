@@ -1,21 +1,34 @@
 package com.zone24x7.projects;
 
-import java.util.ArrayList;
-
 public class Main {
+    private static InputReader inputReader;
+    private static String userinput;
+    private final static String PATH = "data/projects.txt";
+    private static Project project;
+    private static TrackViewer trackViewer;
+
+    static {
+        inputReader = new CommandLineInputReader();
+        trackViewer = new CommandLineTrackViewer();
+    }
     public static void main(String[] args) {
 
-        String userInput = args[0];
-        String path = "data/projects.txt";
+        try {
+            userinput = inputReader.read(args);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
 
-
-        //project_list
-        ProjectFactory project = new ProjectFactory();
-        Project pro = project.getProject(path, userInput);
-
-
-
-        System.out.println("Cost is: " + pro.getCost());
+        if(userinput != null){
+            //project_list
+            ProjectFactory pro = new ProjectFactory();
+            project = pro.getProject(PATH, userinput);
+            if (project != null) {
+                trackViewer.viewTrack(project.getCost());
+            }else {
+                trackViewer.viewError("Please re-check your Inputs..");
+            }
+        }
 
     }
 }

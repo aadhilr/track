@@ -6,7 +6,7 @@ public abstract class Project {
     private  Integer number_of_emp;
     private  Integer duration;
 
-    public abstract Integer getCost();
+    public abstract double getCost();
 
     public Integer getCompany_id() {
         return company_id;

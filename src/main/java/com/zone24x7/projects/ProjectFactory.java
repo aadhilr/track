@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ProjectFactory {
 
-    String cost ;
+    String cost;
     Integer num = 0;
     Integer duration = 0;
 
@@ -30,34 +30,31 @@ public class ProjectFactory {
                 duration = Integer.parseInt(projectProperties[5]);
 
 
-
                 if (user_input_company != null) {
                     if (projectId.equals(user_input_company)) {
-                        Project p = createProject(projectType,cost);
+                        Project p = createProject(projectType, cost);
                         p.setNumber_of_emp(num);
                         p.setDuration(duration);
                         return p;
                     }
                 }
-
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
 
-                e.printStackTrace();
-
-            }
-            return null;
+            e.printStackTrace();
 
         }
+        return null;
+
+    }
 
 
-    Project createProject(String type,String cost){
+    Project createProject(String type, String cost) {
 
-        if(type.equals("variable")){
+        if (type.equals("variable")) {
             return new VariableProject();
-        }else if(type.equals("fixed")){
-            FixedProject fp=new FixedProject();
+        } else if (type.equals("fixed")) {
+            FixedProject fp = new FixedProject();
             fp.setCost(Integer.parseInt(cost));
             return fp;
 

@@ -10,7 +10,7 @@ public class FixedProject extends Project {
 
 
     @Override
-    public Integer getCost() {
+    public double getCost() {
         return cost;
     }
 
