@@ -1,0 +1,3 @@
+10,fixed,nimal,10000,4,5
+20,fixed,saman,20000,2,6
+30,var,sunil,_,3,4
